@@ -1,5 +1,7 @@
 package inspired.gaming.betmanagement.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,12 @@ public class EventDetails {
 	
 	@Column(name="eventdescription")
 	public String eventDescription;
+	
+	@Column(name="startDateTime")
+	public Date startDateTime;
+	
+	@Column(name="enddatetime")
+	public Date endDateTime;
 
 	public Integer getEventId() {
 		return eventId;
@@ -43,13 +51,31 @@ public class EventDetails {
 		this.eventDescription = eventDescription;
 	}
 
+	public Date getStartDateTime() {
+		return startDateTime;
+	}
+
+	public void setStartDateTime(Date startDateTime) {
+		this.startDateTime = startDateTime;
+	}
+
+	public Date getEndDateTime() {
+		return endDateTime;
+	}
+
+	public void setEndDateTime(Date endDateTime) {
+		this.endDateTime = endDateTime;
+	}
+
 	@Override
 	public String toString() {
 		return "EventDetails [eventId=" + eventId + ", eventname=" + eventname + ", eventDescription="
-				+ eventDescription + ", getEventId()=" + getEventId() + ", getEventname()=" + getEventname()
-				+ ", getEventDescription()=" + getEventDescription() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ eventDescription + ", startDateTime=" + startDateTime + ", endDateTime=" + endDateTime
+				+ ", getEventId()=" + getEventId() + ", getEventname()=" + getEventname() + ", getEventDescription()="
+				+ getEventDescription() + ", getStartDateTime()=" + getStartDateTime() + ", getEndDateTime()="
+				+ getEndDateTime() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
-	
+
 	
 }
