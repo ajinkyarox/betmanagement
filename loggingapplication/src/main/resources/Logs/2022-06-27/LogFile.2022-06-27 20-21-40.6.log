@@ -1,0 +1,106 @@
+[2022-06-27 20:24:56] - HTTP PUT http://localhost:8761/eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734
+[2022-06-27 20:24:56] - Disable delta property : false
+[2022-06-27 20:24:56] - Single vip registry refresh property : null
+[2022-06-27 20:24:56] - Force full registry fetch : false
+[2022-06-27 20:24:56] - Application is null : false
+[2022-06-27 20:24:56] - Registered Applications size is zero : true
+[2022-06-27 20:24:56] - Application version is -1: false
+[2022-06-27 20:24:56] - Getting all instance registry info from the eureka server
+[2022-06-27 20:24:56] - HTTP GET http://localhost:8761/eureka/apps/
+[2022-06-27 20:24:56] - Accept=[application/json, application/*+json]
+[2022-06-27 20:24:56] - CookieSpec selected: default
+[2022-06-27 20:24:56] - Auth cache not set in the context
+[2022-06-27 20:24:56] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - http-outgoing-0 << "[read] I/O error: Read timed out"
+[2022-06-27 20:24:56] - Connection leased: [id: 0][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - http-outgoing-0: set socket timeout to 0
+[2022-06-27 20:24:56] - Executing request GET /eureka/apps/ HTTP/1.1
+[2022-06-27 20:24:56] - Target auth state: UNCHALLENGED
+[2022-06-27 20:24:56] - Proxy auth state: UNCHALLENGED
+[2022-06-27 20:24:56] - http-outgoing-0 >> GET /eureka/apps/ HTTP/1.1
+[2022-06-27 20:24:56] - http-outgoing-0 >> Accept: application/json, application/*+json
+[2022-06-27 20:24:56] - http-outgoing-0 >> Host: localhost:8761
+[2022-06-27 20:24:56] - http-outgoing-0 >> Connection: Keep-Alive
+[2022-06-27 20:24:56] - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 20:24:56] - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+[2022-06-27 20:24:56] - http-outgoing-0 >> "GET /eureka/apps/ HTTP/1.1[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 >> "[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Content-Length: 630[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Date: Mon, 27 Jun 2022 19:24:56 GMT[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0xff][0xed]S]o[0xa2]@[0x14][0xfd]/[0x93]>Z[0xc4][0x82][0xa8]<[0x95]Hc[0xc8]v[0xd5][0xac][0xba][0xcd]f[0xd3][0x98]Y[0xb8][0xc2]da 3[0x83]]c[0xfc][0xef][0xbd][0x3][0x8b][0xab][0xad]F[0xd3][0xf4]q[0x9f][0x94];[0xe7]~[0x9d]{[0xce][0x96][0xd0][0xa2]HYH[0x15][0xcb][0xb9]$[0xee][0x96][0xac]AH[0xfd][0xb9][0x8c] U[0x94][0xb8][0xa4]CZ[0x1a][0x85][0x91][0x84][0xca]$[0xcc]#[0xc0][0xe0]b[0xba][0xbc][[0xd6][0xf]M:qn[0x9][0xa7][0x99]~~[0x9c][0x8c]F[0xc1]x[0xe4]M[0xa7][0x8f][0xc1][0xd0][0x9b][0x7][0x93]1b[0x19][0x97][0x8a][0xf2][0x10]*`[0xf3][0x11]D[0xba][0xc5][0xe0][0xce][0xe8]8}[0xc3]4z]7[0xcd][0xe3][0x98][0xf1][0xf8][0xa0][0xb2][0xdb]7M=E[0x92]K5[0xae][0x1b][0x1c]f[0xd4]c[0x9c][0xed]ZxQ$[0xde][0xa7]`{U[0xca]j[0x15][0xfc][0xca]qo[0xc1][0xa2][0x8][0xf8]l[0x1f][0x1f][0x19]O[0x9e]t[0x89]"[0x17]JssC[0xaa]IZ[0xe4][0x1e]8[0xfd][0x95][0x82][0x1e]][0x89][0x12][0xc8][0xe][0xcb]AX[\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "[0x98][0xfe]C[0xda][0xb6]u[0x4]\[0xd1]TV[0xc8]0/[0xb9][0x12][0x1b][0xbd]8[0x96][0x8a][0xa8][0xa2]C[0xe0][\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "D[0xc0]W[0xb9][0xce][0xbd][0xf]S*[0xf5][0x0]a[0x9e][0x19][0x1c][0xd4]*e[0xc]\[0x90][0xe1][0xbb][0x11]4[0xb4][0xe1][0xc7][0x8d][0xf]+Z[0xa6][0xca]?.[0xd1]j[0x8e][0xf0]u3y[0xe1][0xba]c[\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "TBS^[0x0][0x87][0x17][0x9a][0x6][0x1a][0xbf][0xd6][0xbf]3[0x8][0xb1][0x9b]e[0xe2],[0xa5][0xa8][0xf8]nb[0x3][0x8c][0x9][0x88][0x99]Tu|[0xce]2[0xc0][0xf6][0x19]r[0xdd]q[0xba][0x8e][0xd5][0xed][0xf5][0x9d][0x9e]m[0xf][0xb0][0x3][0x95][0xea][][0xf8]<[0x8][0xd6],|S[0xc6][0xd4][0xc4][0x9][0x8c][0xc3][0xa2]8[0x95][0xe8][0xc],[0xb][0x17][0xc8]@QM[0x94][0x9e]?[0xa3][0x9c][0xc6][0x90][0xe1][0xbe]F}[0x17]R[0xa9]c[0xa7][0xe5][0x91][0xc1][0x14][0xdf][0x16]"[0xc5]h[0xa2]T[0xe1][0xb6][0xdb]G[0xd2][0xd2][0xc8][0xf6][0xfe][0xf6]W`i[0xa8]J[0xaa]r[0xd1]f5[0xb3][0x9][0xd0]T%[0xc3][0x4][0xc2][0xdf][0xd7]f[0xd6])[0x98][0xbb][0xae][0x95][0x8][0xd5]m[0xdf][0x8b][0x9c]4[0x1a][0xfa]~[0x11][0xc7][0xe4]0[0xcf]E[0xc4]8[0x6]x[0xec]3[0x19]j[0xf9]nf[0xc8]$[0x88][0xbd][0xd4][0xea][0xab],[\n]"
+[2022-06-27 20:24:56] - http-outgoing-0 << "$[0xe][0xa2][0x3]r[0xc9][0xd1]Y[0xfe][0xc2]|&[0xd4][0xe6]$[0xc8][0xe9]Y[0xb6]vX}[0xba]M[0xa1][0x95][0xe5][0xf9][0xfe][0x83]Ov[0xcf][0xbb][0xd6][0xde][0xf1][0xde]4[0xb8][0x1d]y[0xf3][0x87]'[0xef][0xc7][0xf5]V[0xa7][0x5][0xbb][0x8d]q[0xbc][0x17][0xba]q[0xfb]=[0xa7]{[0x85][0xc7][0xdf][0xf4][0xf9]\s[0xe3][0x8][0xff][0xcd]}`[0xbf][0xae]c[0xf7]/[0x9a][0xbb][0x6]}[0xc0][0xdc][0xdd][0x8e][0xd5][0xb9]ln-[0x8b][0xeb][0xcc][0x8d][0xc8][0xab][0xcd][0xad][0xb1][0x1f]3[0xf7]Q[0xe6]is[0x1f][0xc8][0xfa][0xb4][0xab][0x8f][0x1][0x9f]eg<[0xc4]e;[0xdb][0x3]sp[0xd6][0xce][0xcf][0xbb][0xdd]+[0x1][0xea][0xce]/[0x12][0x8][0x0][0x0]"
+[2022-06-27 20:24:56] - http-outgoing-0 << HTTP/1.1 200 
+[2022-06-27 20:24:56] - http-outgoing-0 << Content-Encoding: gzip
+[2022-06-27 20:24:56] - http-outgoing-0 << Content-Type: application/json
+[2022-06-27 20:24:56] - http-outgoing-0 << Content-Length: 630
+[2022-06-27 20:24:56] - http-outgoing-0 << Date: Mon, 27 Jun 2022 19:24:56 GMT
+[2022-06-27 20:24:56] - http-outgoing-0 << Keep-Alive: timeout=60
+[2022-06-27 20:24:56] - http-outgoing-0 << Connection: keep-alive
+[2022-06-27 20:24:56] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:24:56] - Response 200 OK
+[2022-06-27 20:24:56] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+[2022-06-27 20:24:56] - Accept=[application/json, application/*+json]
+[2022-06-27 20:24:56] - CookieSpec selected: default
+[2022-06-27 20:24:56] - Auth cache not set in the context
+[2022-06-27 20:24:56] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - http-outgoing-1 << "[read] I/O error: Read timed out"
+[2022-06-27 20:24:56] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 20:24:56] - Executing request PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1
+[2022-06-27 20:24:56] - Target auth state: UNCHALLENGED
+[2022-06-27 20:24:56] - Proxy auth state: UNCHALLENGED
+[2022-06-27 20:24:56] - http-outgoing-1 >> PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1
+[2022-06-27 20:24:56] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-27 20:24:56] - http-outgoing-1 >> Content-Length: 0
+[2022-06-27 20:24:56] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-27 20:24:56] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-27 20:24:56] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 20:24:56] - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+[2022-06-27 20:24:56] - http-outgoing-1 >> "PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "Date: Mon, 27 Jun 2022 19:24:56 GMT[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << "[\r][\n]"
+[2022-06-27 20:24:56] - http-outgoing-1 << HTTP/1.1 200 
+[2022-06-27 20:24:56] - http-outgoing-1 << Content-Type: application/json
+[2022-06-27 20:24:56] - http-outgoing-1 << Content-Length: 0
+[2022-06-27 20:24:56] - http-outgoing-1 << Date: Mon, 27 Jun 2022 19:24:56 GMT
+[2022-06-27 20:24:56] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-27 20:24:56] - http-outgoing-1 << Connection: keep-alive
+[2022-06-27 20:24:56] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:24:56] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:24:56] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 20:24:56] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - Response 200 OK
+[2022-06-27 20:24:56] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - Heartbeat status: 200
+[2022-06-27 20:24:56] - Connection [id: 0][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:24:56] - http-outgoing-0: set socket timeout to 0
+[2022-06-27 20:24:56] - Connection released: [id: 0][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:24:56] - The response status is 200
+[2022-06-27 20:24:56] - Got full registry with apps hashcode UP_2_
+[2022-06-27 20:24:56] - The total number of all instances in the client now is 2
+[2022-06-27 20:24:56] - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_2_, is fetching remote regions? false 

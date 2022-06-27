@@ -1,0 +1,105 @@
+[2022-06-27 19:59:07] - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+[2022-06-27 19:59:07] - Stopping beans in phase 0
+[2022-06-27 19:59:07] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001: registering service...
+[2022-06-27 19:59:07] - HTTP POST http://localhost:8761/eureka/apps/LOGGINGAPPLICATION
+[2022-06-27 19:59:07] - Accept=[application/json, application/*+json]
+[2022-06-27 19:59:07] - Writing [InstanceInfo [instanceId = 192.168.0.75:loggingapplication:8001, appName = LOGGINGAPPLICATION, hostName = 192.168.0.75, status = DOWN, ipAddr = 192.168.0.75, port = 8001, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@76629b06] as "application/json"
+[2022-06-27 19:59:07] - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-06-27 19:59:08] - Shutting down DiscoveryClient ...
+[2022-06-27 19:59:08] - CookieSpec selected: default
+[2022-06-27 19:59:08] - Auth cache not set in the context
+[2022-06-27 19:59:08] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 19:59:08] - Executing request POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1
+[2022-06-27 19:59:08] - Target auth state: UNCHALLENGED
+[2022-06-27 19:59:08] - Proxy auth state: UNCHALLENGED
+[2022-06-27 19:59:08] - http-outgoing-1 >> POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1
+[2022-06-27 19:59:08] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-27 19:59:08] - http-outgoing-1 >> Accept-Encoding: gzip
+[2022-06-27 19:59:08] - http-outgoing-1 >> Content-Type: application/json
+[2022-06-27 19:59:08] - http-outgoing-1 >> Content-Length: 1010
+[2022-06-27 19:59:08] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-27 19:59:08] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-27 19:59:08] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 19:59:08] - http-outgoing-1 >> "POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Accept-Encoding: gzip[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Content-Type: application/json[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Content-Length: 1010[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "{"instance":{"instanceId":"192.168.0.75:loggingapplication:8001","app":"LOGGINGAPPLICATION","appGroupName":null,"ipAddr":"192.168.0.75","sid":"na","homePageUrl":"http://192.168.0.75:8001/","statusPageUrl":"http://192.168.0.75:8001/actuator/info","healthCheckUrl":"http://192.168.0.75:8001/actuator/health","secureHealthCheckUrl":null,"vipAddress":"loggingapplication","secureVipAddress":"loggingapplication","countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"},"hostName":"192.168.0.75","status":"DOWN","overriddenStatus":"UNKNOWN","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0},"isCoordinatingDiscoveryServer":false,"lastUpdatedTimestamp":1656356345523,"lastDirtyTimestamp":1656356347987,"actionType":null,"asgName":null,"port":{"$":8001,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"metadata":{"management.port":"8001"}}}"
+[2022-06-27 19:59:08] - http-outgoing-1 << "HTTP/1.1 204 [\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Date: Mon, 27 Jun 2022 18:59:07 GMT[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << HTTP/1.1 204 
+[2022-06-27 19:59:08] - http-outgoing-1 << Content-Type: application/json
+[2022-06-27 19:59:08] - http-outgoing-1 << Date: Mon, 27 Jun 2022 18:59:07 GMT
+[2022-06-27 19:59:08] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-27 19:59:08] - http-outgoing-1 << Connection: keep-alive
+[2022-06-27 19:59:08] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 19:59:08] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 19:59:08] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 19:59:08] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - Response 204 NO_CONTENT
+[2022-06-27 19:59:08] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - registration status: 204
+[2022-06-27 19:59:08] - Unregistering ...
+[2022-06-27 19:59:08] - HTTP DELETE http://localhost:8761/eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001
+[2022-06-27 19:59:08] - Accept=[application/json, application/*+json]
+[2022-06-27 19:59:08] - CookieSpec selected: default
+[2022-06-27 19:59:08] - Auth cache not set in the context
+[2022-06-27 19:59:08] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 19:59:08] - Executing request DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1
+[2022-06-27 19:59:08] - Target auth state: UNCHALLENGED
+[2022-06-27 19:59:08] - Proxy auth state: UNCHALLENGED
+[2022-06-27 19:59:08] - http-outgoing-1 >> DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1
+[2022-06-27 19:59:08] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-27 19:59:08] - http-outgoing-1 >> Content-Length: 0
+[2022-06-27 19:59:08] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-27 19:59:08] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-27 19:59:08] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 19:59:08] - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+[2022-06-27 19:59:08] - http-outgoing-1 >> "DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Date: Mon, 27 Jun 2022 18:59:07 GMT[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << "[\r][\n]"
+[2022-06-27 19:59:08] - http-outgoing-1 << HTTP/1.1 200 
+[2022-06-27 19:59:08] - http-outgoing-1 << Content-Type: application/json
+[2022-06-27 19:59:08] - http-outgoing-1 << Content-Length: 0
+[2022-06-27 19:59:08] - http-outgoing-1 << Date: Mon, 27 Jun 2022 18:59:07 GMT
+[2022-06-27 19:59:08] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-27 19:59:08] - http-outgoing-1 << Connection: keep-alive
+[2022-06-27 19:59:08] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 19:59:08] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 19:59:08] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 19:59:08] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 19:59:08] - Response 200 OK
+[2022-06-27 19:59:08] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - deregister  status: 200
+[2022-06-27 19:59:08] - Completed shut down of DiscoveryClient
+[2022-06-27 19:59:25] - Starting LoggingapplicationApplication using Java 18.0.1 on DESKTOP-NQ7QB67 with PID 17140 (C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication\target\classes started by user in C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication)
+[2022-06-27 19:59:25] - Running with Spring Boot v2.7.1, Spring v5.3.21
+[2022-06-27 19:59:25] - No active profile set, falling back to 1 default profile: "default"
+[2022-06-27 19:59:25] - Loading source class inspired.gaming.loggingapplication.LoggingapplicationApplication
+[2022-06-27 19:59:25] - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3185fa6b
+[2022-06-27 19:59:25] - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[2022-06-27 19:59:25] - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+[2022-06-27 19:59:26] - Identified candidate component class: file [C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication\target\classes\inspired\gaming\loggingapplication\controllers\LoggerController.class]

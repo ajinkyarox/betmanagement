@@ -1,0 +1,76 @@
+[2022-06-27 20:19:03] - DiscoveryClient_LOGGINGAPPLICATION/localhost:loggingapplication:8001 - Heartbeat status: 200
+[2022-06-27 20:19:03] - HTTP GET http://localhost:8761/eureka/apps/delta
+[2022-06-27 20:19:03] - Accept=[application/json, application/*+json]
+[2022-06-27 20:19:03] - CookieSpec selected: default
+[2022-06-27 20:19:03] - Auth cache not set in the context
+[2022-06-27 20:19:03] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:19:03] - http-outgoing-3 << "[read] I/O error: Read timed out"
+[2022-06-27 20:19:03] - Connection leased: [id: 3][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:19:03] - http-outgoing-3: set socket timeout to 0
+[2022-06-27 20:19:03] - Executing request GET /eureka/apps/delta HTTP/1.1
+[2022-06-27 20:19:03] - Target auth state: UNCHALLENGED
+[2022-06-27 20:19:03] - Proxy auth state: UNCHALLENGED
+[2022-06-27 20:19:03] - http-outgoing-3 >> GET /eureka/apps/delta HTTP/1.1
+[2022-06-27 20:19:03] - http-outgoing-3 >> Accept: application/json, application/*+json
+[2022-06-27 20:19:03] - http-outgoing-3 >> Host: localhost:8761
+[2022-06-27 20:19:03] - http-outgoing-3 >> Connection: Keep-Alive
+[2022-06-27 20:19:03] - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 20:19:03] - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+[2022-06-27 20:19:03] - http-outgoing-3 >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 >> "[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Content-Encoding: gzip[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Content-Length: 85[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Date: Mon, 27 Jun 2022 19:19:03 GMT[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "[\r][\n]"
+[2022-06-27 20:19:03] - http-outgoing-3 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0xff][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0xcc][0x95]t@[0xaa][0x80]"[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xc1][0xd0][0x80]x[0xa3]x[0x88][0x4]L[0xbb][0x92]Utlm-[0x0][0xc2]`[0x13][R[0x0][0x0][0x0]"
+[2022-06-27 20:19:03] - http-outgoing-3 << HTTP/1.1 200 
+[2022-06-27 20:19:03] - http-outgoing-3 << Content-Encoding: gzip
+[2022-06-27 20:19:03] - http-outgoing-3 << Content-Type: application/json
+[2022-06-27 20:19:03] - http-outgoing-3 << Content-Length: 85
+[2022-06-27 20:19:03] - http-outgoing-3 << Date: Mon, 27 Jun 2022 19:19:03 GMT
+[2022-06-27 20:19:03] - http-outgoing-3 << Keep-Alive: timeout=60
+[2022-06-27 20:19:03] - http-outgoing-3 << Connection: keep-alive
+[2022-06-27 20:19:03] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:19:03] - Response 200 OK
+[2022-06-27 20:19:03] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+[2022-06-27 20:19:03] - Connection [id: 3][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:19:03] - http-outgoing-3: set socket timeout to 0
+[2022-06-27 20:19:03] - Connection released: [id: 3][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:19:03] - Got delta update with apps hashcode UP_2_
+[2022-06-27 20:19:03] - The total number of instances fetched by the delta processor : 0
+[2022-06-27 20:19:03] - The total number of all instances in the client now is 2
+[2022-06-27 20:19:03] - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_2_, is fetching remote regions? false 
+[2022-06-27 20:21:33] - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+[2022-06-27 20:21:33] - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+[2022-06-27 20:21:33] - Instantiating TestContextBootstrapper for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+[2022-06-27 20:21:33] - Neither @ContextConfiguration nor @ContextHierarchy found for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests], using SpringBootContextLoader
+[2022-06-27 20:21:33] - Did not detect default resource location for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]: class path resource [inspired/gaming/loggingapplication/LoggingapplicationApplicationTests-context.xml] does not exist
+[2022-06-27 20:21:33] - Did not detect default resource location for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]: class path resource [inspired/gaming/loggingapplication/LoggingapplicationApplicationTestsContext.groovy] does not exist
+[2022-06-27 20:21:33] - Could not detect default resource locations for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+[2022-06-27 20:21:33] - Could not detect default configuration classes for test class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]: LoggingapplicationApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[2022-06-27 20:21:33] - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]
+[2022-06-27 20:21:33] - Identified candidate component class: file [C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication\target\classes\inspired\gaming\loggingapplication\LoggingapplicationApplication.class]
+[2022-06-27 20:21:33] - Found @SpringBootConfiguration inspired.gaming.loggingapplication.LoggingapplicationApplication for test class inspired.gaming.loggingapplication.LoggingapplicationApplicationTests
+[2022-06-27 20:21:34] - @TestExecutionListeners is not present for class [inspired.gaming.loggingapplication.LoggingapplicationApplicationTests]: using defaults.
+[2022-06-27 20:21:34] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+[2022-06-27 20:21:34] - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+[2022-06-27 20:21:34] - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+[2022-06-27 20:21:34] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@46074492, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@d78795, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2c715e84, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@47428937, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3b9d6699, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7caa550, org.springframework.test.context.event.EventPublishingTestExecutionListener@21694e53, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@72b16078, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@22c86919, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@70fab835, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1b0a7baf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@62417a16, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@32057e6]
+[2022-06-27 20:21:34] - Before test class: context [DefaultTestContext@6cea706c testClass = LoggingapplicationApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3bd7f8dc testClass = LoggingapplicationApplicationTests, locations = '{}', classes = '{class inspired.gaming.loggingapplication.LoggingapplicationApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5629510, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@62727399, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7203c7ff, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@2fc6f97f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@906d29b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@7714e963], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+[2022-06-27 20:21:34] - Starting LoggingapplicationApplicationTests using Java 18.0.1 on DESKTOP-NQ7QB67 with PID 9312 (started by user in C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication)
+[2022-06-27 20:21:34] - Running with Spring Boot v2.7.1, Spring v5.3.21
+[2022-06-27 20:21:34] - No active profile set, falling back to 1 default profile: "default"
+[2022-06-27 20:21:34] - Loading source class inspired.gaming.loggingapplication.LoggingapplicationApplication
+[2022-06-27 20:21:34] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@781a9412
+[2022-06-27 20:21:34] - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+[2022-06-27 20:21:34] - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+[2022-06-27 20:21:34] - Identified candidate component class: file [C:\Users\user\OneDrive\Desktop\Inspired Gaming\loggingapplication\target\classes\inspired\gaming\loggingapplication\controllers\LoggerController.class]

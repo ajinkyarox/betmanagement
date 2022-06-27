@@ -1,0 +1,116 @@
+[2022-06-27 20:33:57] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-27 20:33:57] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+[2022-06-27 20:33:57] - http-outgoing-1 << Connection: keep-alive
+[2022-06-27 20:33:57] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:33:57] - Connection [id: 0][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:33:57] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:33:57] - http-outgoing-0: set socket timeout to 0
+[2022-06-27 20:33:57] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 20:33:57] - Connection released: [id: 0][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:33:57] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:33:57] - Response 200 OK
+[2022-06-27 20:33:57] - Got delta update with apps hashcode UP_2_
+[2022-06-27 20:33:57] - The total number of instances fetched by the delta processor : 0
+[2022-06-27 20:33:57] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - Heartbeat status: 200
+[2022-06-27 20:33:57] - The total number of all instances in the client now is 2
+[2022-06-27 20:33:57] - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_2_, is fetching remote regions? false 
+[2022-06-27 20:34:25] - Resolving eureka endpoints via configuration
+[2022-06-27 20:34:25] - The availability zone for the given region us-east-1 are [defaultZone]
+[2022-06-27 20:34:25] - Config resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2022-06-27 20:34:25] - Local zone=defaultZone; resolved to: [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2022-06-27 20:34:25] - Resolved to [AwsEndpoint{ serviceUrl='http://localhost:8761/eureka/', region='us-east-1', zone='defaultZone'}]
+[2022-06-27 20:34:27] - HTTP PUT http://localhost:8761/eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734
+[2022-06-27 20:34:27] - HTTP GET http://localhost:8761/eureka/apps/delta
+[2022-06-27 20:34:27] - Accept=[application/json, application/*+json]
+[2022-06-27 20:34:27] - Accept=[application/json, application/*+json]
+[2022-06-27 20:34:27] - CookieSpec selected: default
+[2022-06-27 20:34:27] - CookieSpec selected: default
+[2022-06-27 20:34:27] - Auth cache not set in the context
+[2022-06-27 20:34:27] - Auth cache not set in the context
+[2022-06-27 20:34:27] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - http-outgoing-0 << "[read] I/O error: Read timed out"
+[2022-06-27 20:34:27] - http-outgoing-1 << "[read] I/O error: Read timed out"
+[2022-06-27 20:34:27] - Connection leased: [id: 0][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - http-outgoing-0: set socket timeout to 0
+[2022-06-27 20:34:27] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - Executing request GET /eureka/apps/delta HTTP/1.1
+[2022-06-27 20:34:27] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 20:34:27] - Target auth state: UNCHALLENGED
+[2022-06-27 20:34:27] - Proxy auth state: UNCHALLENGED
+[2022-06-27 20:34:27] - Executing request PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1
+[2022-06-27 20:34:27] - Target auth state: UNCHALLENGED
+[2022-06-27 20:34:27] - http-outgoing-0 >> GET /eureka/apps/delta HTTP/1.1
+[2022-06-27 20:34:27] - Proxy auth state: UNCHALLENGED
+[2022-06-27 20:34:27] - http-outgoing-0 >> Accept: application/json, application/*+json
+[2022-06-27 20:34:27] - http-outgoing-0 >> Host: localhost:8761
+[2022-06-27 20:34:27] - http-outgoing-0 >> Connection: Keep-Alive
+[2022-06-27 20:34:27] - http-outgoing-1 >> PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1
+[2022-06-27 20:34:27] - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 20:34:27] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-27 20:34:27] - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+[2022-06-27 20:34:27] - http-outgoing-1 >> Content-Length: 0
+[2022-06-27 20:34:27] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-27 20:34:27] - http-outgoing-0 >> "GET /eureka/apps/delta HTTP/1.1[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-27 20:34:27] - http-outgoing-0 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-27 20:34:27] - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+[2022-06-27 20:34:27] - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 >> "[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "PUT /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001?status=UP&lastDirtyTimestamp=1656357866734 HTTP/1.1[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Content-Encoding: gzip[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Content-Length: 85[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Date: Mon, 27 Jun 2022 19:34:27 GMT[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << "[0x1f][0x8b][0x8][0x0][0x0][0x0][0x0][0x0][0x0][0xff][0xab]VJ,([0xc8][0xc9]LN,[0xc9][0xcc][0xcf]+V[0xb2][0xaa]V*K-*[0x6][0xb1][0xe3][0xe3]SRsJ[0x12][0x95][0xac][0x94][0x8c][0x95]t@[0xaa][0x80]"[0x19][0x89][0xc5][0x19][0xc9][0xf9])[0xa9]@[0xc1][0xd0][0x80]x[0xa3]x[0x88][0x4]L[0xbb][0x92]Utlm-[0x0][0xcf][0x8]DR[0x0][0x0][0x0]"
+[2022-06-27 20:34:27] - http-outgoing-0 << HTTP/1.1 200 
+[2022-06-27 20:34:27] - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Content-Encoding: gzip
+[2022-06-27 20:34:27] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Content-Type: application/json
+[2022-06-27 20:34:27] - http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Content-Length: 85
+[2022-06-27 20:34:27] - http-outgoing-1 << "Date: Mon, 27 Jun 2022 19:34:27 GMT[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Date: Mon, 27 Jun 2022 19:34:27 GMT
+[2022-06-27 20:34:27] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Keep-Alive: timeout=60
+[2022-06-27 20:34:27] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-0 << Connection: keep-alive
+[2022-06-27 20:34:27] - http-outgoing-1 << "[\r][\n]"
+[2022-06-27 20:34:27] - http-outgoing-1 << HTTP/1.1 200 
+[2022-06-27 20:34:27] - http-outgoing-1 << Content-Type: application/json
+[2022-06-27 20:34:27] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:34:27] - http-outgoing-1 << Content-Length: 0
+[2022-06-27 20:34:27] - http-outgoing-1 << Date: Mon, 27 Jun 2022 19:34:27 GMT
+[2022-06-27 20:34:27] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-27 20:34:27] - http-outgoing-1 << Connection: keep-alive
+[2022-06-27 20:34:27] - Response 200 OK
+[2022-06-27 20:34:27] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-27 20:34:27] - Reading to [org.springframework.cloud.netflix.eureka.http.EurekaApplications]
+[2022-06-27 20:34:27] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:34:27] - http-outgoing-1: set socket timeout to 0
+[2022-06-27 20:34:27] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - Response 200 OK
+[2022-06-27 20:34:27] - Connection [id: 0][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-27 20:34:27] - http-outgoing-0: set socket timeout to 0
+[2022-06-27 20:34:27] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - Heartbeat status: 200
+[2022-06-27 20:34:27] - Connection released: [id: 0][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-27 20:34:27] - Got delta update with apps hashcode UP_2_
+[2022-06-27 20:34:27] - The total number of instances fetched by the delta processor : 0
+[2022-06-27 20:34:27] - The total number of all instances in the client now is 2
+[2022-06-27 20:34:27] - Completed cache refresh task for discovery. All Apps hash code is Local region apps hashcode: UP_2_, is fetching remote regions? false 

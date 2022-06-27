@@ -11,4 +11,6 @@ public interface AccountDetailsRepository extends JpaRepository<AccountDetails, 
 
 	public AccountDetails findByUsernameAndPassword(@Param("username") String username, @Param("passwd") String passwd);
 
+	public AccountDetails findByUsername(@Param("username") String username);
+
 }

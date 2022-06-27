@@ -8,10 +8,6 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 import inspired.gaming.betmanagement.other.Constants;
 import inspired.gaming.betmanagement.repository.AccountDetailsRepository;
 
-
-
-
-
 @Service
 public class AccountDetailsServiceImpl implements AccountDetailsService {
 
@@ -23,9 +19,8 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
-			AccountDetails accountDetailsTemp = accountDetailsRepository.findByUsernameAndPassword(accountDetails.getUsername(),
-					accountDetails.getPassword());
-			if ( accountDetailsTemp== null) {
+			AccountDetails accountDetailsTemp = accountDetailsRepository.findByUsername(accountDetails.getUsername());
+			if (accountDetailsTemp == null) {
 				accountDetailsRepository.save(accountDetails);
 				baseResponse.setMessage("Account Details Saved");
 			} else {
@@ -43,12 +38,12 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 	@Override
 	public BaseResponse getAccountDetails(AccountDetails accountDetails) {
 		// TODO Auto-generated method stub
-		
+
 		BaseResponse baseResponse = new BaseResponse();
 		try {
-			AccountDetails accountDetailsTemp = accountDetailsRepository.findByUsernameAndPassword(accountDetails.getUsername(),
-					accountDetails.getPassword());
-			if ( accountDetailsTemp== null) {
+			AccountDetails accountDetailsTemp = accountDetailsRepository
+					.findByUsernameAndPassword(accountDetails.getUsername(), accountDetails.getPassword());
+			if (accountDetailsTemp == null) {
 				baseResponse.setMessage("Account does not exist.");
 			} else {
 				baseResponse.setMessage("Account verification successful");
@@ -60,7 +55,7 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 		}
 
 		return baseResponse;
-		
+
 	}
 
 }
