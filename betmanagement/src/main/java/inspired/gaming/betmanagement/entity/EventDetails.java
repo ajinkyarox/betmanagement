@@ -8,24 +8,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="EventDetails")
+@Entity(name = "EventDetails")
 public class EventDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer eventId;
-	
-	@Column(name="eventname")
+
+	@Column(name = "eventname")
 	public String eventname;
-	
-	@Column(name="eventdescription")
+
+	@Column(name = "eventdescription")
 	public String eventDescription;
-	
-	@Column(name="startDateTime")
+
+	@Column(name = "startDateTime")
 	public Date startDateTime;
-	
-	@Column(name="enddatetime")
+
+	@Column(name = "enddatetime")
 	public Date endDateTime;
+
+	@Column(name = "totalBetAmount")
+	public Integer totalBetAmount;
 
 	public Integer getEventId() {
 		return eventId;
@@ -67,15 +70,23 @@ public class EventDetails {
 		this.endDateTime = endDateTime;
 	}
 
+	public Integer getTotalBetAmount() {
+		return totalBetAmount;
+	}
+
+	public void setTotalBetAmount(Integer totalBetAmount) {
+		this.totalBetAmount = totalBetAmount;
+	}
+
 	@Override
 	public String toString() {
 		return "EventDetails [eventId=" + eventId + ", eventname=" + eventname + ", eventDescription="
 				+ eventDescription + ", startDateTime=" + startDateTime + ", endDateTime=" + endDateTime
-				+ ", getEventId()=" + getEventId() + ", getEventname()=" + getEventname() + ", getEventDescription()="
-				+ getEventDescription() + ", getStartDateTime()=" + getStartDateTime() + ", getEndDateTime()="
-				+ getEndDateTime() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ ", totalBetAmount=" + totalBetAmount + ", getEventId()=" + getEventId() + ", getEventname()="
+				+ getEventname() + ", getEventDescription()=" + getEventDescription() + ", getStartDateTime()="
+				+ getStartDateTime() + ", getEndDateTime()=" + getEndDateTime() + ", getTotalBetAmount()="
+				+ getTotalBetAmount() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
 				+ super.toString() + "]";
 	}
 
-	
 }

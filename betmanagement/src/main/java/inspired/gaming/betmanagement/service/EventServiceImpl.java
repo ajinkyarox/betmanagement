@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import inspired.gaming.betmanagement.entity.AccountDetails;
 import inspired.gaming.betmanagement.entity.EventDetails;
@@ -12,6 +13,7 @@ import inspired.gaming.betmanagement.other.Constants;
 import inspired.gaming.betmanagement.repository.AccountDetailsRepository;
 import inspired.gaming.betmanagement.repository.EventRepository;
 
+@Service
 public class EventServiceImpl implements EventService {
 
 	@Autowired
@@ -25,7 +27,9 @@ public class EventServiceImpl implements EventService {
 		try {
 			if (validateEventDetails(eventDetails)) {
 				eventRepository.save(eventDetails);
-			} else {
+			}
+
+			else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
 		} catch (Exception e) {
@@ -36,6 +40,7 @@ public class EventServiceImpl implements EventService {
 		return baseResponse;
 	}
 
+	@Override
 	public List<EventDetails> getEventDetails(Integer eventId) {
 
 		List<EventDetails> listOfEventDetails = new ArrayList<EventDetails>();

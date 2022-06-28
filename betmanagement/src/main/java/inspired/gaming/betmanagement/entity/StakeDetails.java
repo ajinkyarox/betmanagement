@@ -30,6 +30,9 @@ public class StakeDetails {
 	@JoinColumn(name = "userId", referencedColumnName = "uid")
 	@Column(name = "userId")
 	public Integer userId;
+	
+	@Column(name = "amountWon")
+	public Integer amountWon;
 
 	public Integer getStakeId() {
 		return stakeId;
@@ -74,10 +77,19 @@ public class StakeDetails {
 	@Override
 	public String toString() {
 		return "StakeDetails [stakeId=" + stakeId + ", stakeAmount=" + stakeAmount + ", eventId=" + eventId
-				+ ", marketId=" + marketId + ", userId=" + userId + ", getStakeId()=" + getStakeId()
-				+ ", getStakeAmount()=" + getStakeAmount() + ", getEventId()=" + getEventId() + ", getMarketId()="
-				+ getMarketId() + ", getUserId()=" + getUserId() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", marketId=" + marketId + ", userId=" + userId + ", amountWon=" + amountWon + ", getStakeId()="
+				+ getStakeId() + ", getStakeAmount()=" + getStakeAmount() + ", getEventId()=" + getEventId()
+				+ ", getMarketId()=" + getMarketId() + ", getUserId()=" + getUserId() + ", getAmountWon()="
+				+ getAmountWon() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+
+	public Integer getAmountWon() {
+		return amountWon;
+	}
+
+	public void setAmountWon(Integer amountWon) {
+		this.amountWon = amountWon;
 	}
 
 }

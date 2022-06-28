@@ -6,18 +6,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="MarketDetails")
+@Entity(name = "MarketDetails")
 public class MarketDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer marketId;
-	
-	@Column(name="marketname")
+
+	@Column(name = "marketname")
 	public String marketname;
-	
-	@Column(name="marketdescription")
+
+	@Column(name = "marketdescription")
 	public String marketdescription;
+
+	@Column(name = "statusOfMarket")
+	public String status;
 
 	public Integer getMarketId() {
 		return marketId;
@@ -46,9 +49,18 @@ public class MarketDetails {
 	@Override
 	public String toString() {
 		return "MarketDetails [marketId=" + marketId + ", marketname=" + marketname + ", marketdescription="
-				+ marketdescription + ", getMarketId()=" + getMarketId() + ", getMarketname()=" + getMarketname()
-				+ ", getMarketdescription()=" + getMarketdescription() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+				+ marketdescription + ", status=" + status + ", getMarketId()=" + getMarketId() + ", getMarketname()="
+				+ getMarketname() + ", getMarketdescription()=" + getMarketdescription() + ", getStatus()="
+				+ getStatus() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
-	
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 }
