@@ -57,7 +57,7 @@ public class MarketController {
 	public ResponseEntity<BaseResponse> deleteMarketDetails(@RequestParam("marketId") Integer marketId) {
 		BaseResponse baseResponse = null;
 		try {
-			baseResponse = marketService.deleteEventDetails(marketId);
+			baseResponse = marketService.deleteMarketDetails(marketId);
 		} catch (Exception e) {
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);

@@ -12,7 +12,7 @@ public interface MarketService {
 
 	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails);
 	public List<MarketDetails> getMarketDetails(Integer marketId);
-	public BaseResponse deleteEventDetails(Integer marketId);
+	public BaseResponse deleteMarketDetails(Integer marketId);
 	
 	
 }

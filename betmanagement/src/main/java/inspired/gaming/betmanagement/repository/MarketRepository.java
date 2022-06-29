@@ -15,7 +15,7 @@ public interface MarketRepository extends JpaRepository<MarketDetails, Integer> 
 	List<MarketDetails> findByEventId(@Param("eventId") Integer eventId);
 	
 
-	MarketDetails findByEventIdAndStatusOfMarket(@Param("eventId") Integer eventId,
-			@Param("statusOfMarket") String statusOfMarket);
+	MarketDetails findByEventIdAndWinst(@Param("eventId") Integer eventId,
+			@Param("Winst") String statusOfMarket);
 
 }

@@ -58,4 +58,21 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 
 	}
 
+	@Override
+	public AccountDetails fetchAccountDetails(Integer uid) {
+		// TODO Auto-generated method stub
+
+		AccountDetails accountDetailsTemp  = new AccountDetails();
+		try {
+			 accountDetailsTemp = accountDetailsRepository
+					.findByUid(uid);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return accountDetailsTemp;
+
+	}
+
 }

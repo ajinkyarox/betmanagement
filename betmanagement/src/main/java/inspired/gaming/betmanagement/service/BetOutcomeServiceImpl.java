@@ -47,7 +47,7 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 			eventDetails.setTotalBetAmount(totalAmount);
 			eventRepository.save(eventDetails);
 			
-			MarketDetails wonMarket = marketRepository.findByEventIdAndStatusOfMarket(eventId,"WON");
+			MarketDetails wonMarket = marketRepository.findByEventIdAndWinst(eventId,"WON");
 			
 			List<StakeDetails> wonStakesList = stakeRepository.findByEventIdAndMarketId(eventId,wonMarket.getMarketId());
 			
@@ -69,5 +69,24 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 
 		return baseResponse;
 	}
+
+	@Override
+	public BaseResponse getWinnings(Integer eventId) {
+		// TODO Auto-generated method stub
+		BaseResponse baseResponse = new BaseResponse();
+		try {
+		MarketDetails marketDetails = marketRepository.findByEventIdAndWinst(eventId, "WON");	
+		List<StakeDetails> listOfWinnings = stakeRepository.findByEventIdAndMarketId(eventId, marketDetails.getMarketId());
+		baseResponse.setMessage("Winnings Extracted Successfully.");
+		baseResponse.setListOfSDObjects(listOfWinnings);
+		} catch(Exception e) {
+			baseResponse.setMessage(e.getMessage());
+			baseResponse.setStatus(Constants.SUCCESSSTATUS);
+		}
+		
+		return baseResponse;
+	}
+	
+	
 
 }

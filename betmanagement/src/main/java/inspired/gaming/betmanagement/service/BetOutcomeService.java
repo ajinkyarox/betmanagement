@@ -9,4 +9,7 @@ public interface BetOutcomeService {
 
 	public BaseResponse calculateWinnings(Integer eventId);
 	
+	public BaseResponse getWinnings(Integer eventId);
+	
+	
 }

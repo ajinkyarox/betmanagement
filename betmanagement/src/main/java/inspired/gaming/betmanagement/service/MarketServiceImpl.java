@@ -51,7 +51,7 @@ public class MarketServiceImpl implements MarketService {
 	}
 
 	@Override
-	public BaseResponse deleteEventDetails(Integer marketId) {
+	public BaseResponse deleteMarketDetails(Integer marketId) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
@@ -74,9 +74,9 @@ public class MarketServiceImpl implements MarketService {
 
 		boolean flag = false;
 		if (marketDetails != null) {
-			if (marketDetails.getMarketname() != null && marketDetails.getMarketname().trim().equals("")
+			if (marketDetails.getMarketname() != null && !marketDetails.getMarketname().trim().equals("")
 					&& marketDetails.getMarketdescription() != null
-					&& marketDetails.getMarketdescription().trim().equals("")) {
+					&& !marketDetails.getMarketdescription().trim().equals("")) {
 				flag = true;
 			}
 

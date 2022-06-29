@@ -13,6 +13,5 @@ public interface StakeRepository extends JpaRepository<StakeDetails, Integer> {
 
 	List<StakeDetails> findByEventId(@Param("eventId") Integer eventId);
 
-
 	List<StakeDetails> findByEventIdAndMarketId(@Param("eventId") Integer eventId, @Param("marketId") Integer marketId);
 }

@@ -78,9 +78,9 @@ public class EventServiceImpl implements EventService {
 
 		boolean flag = false;
 		if (eventDetails != null) {
-			if (eventDetails.getEventname() != null && eventDetails.getEventname().trim().equals("")
+			if (eventDetails.getEventname() != null && !eventDetails.getEventname().trim().equals("")
 					&& eventDetails.getEventDescription() != null
-					&& eventDetails.getEventDescription().trim().equals("") && eventDetails.getStartDateTime() != null
+					&& !eventDetails.getEventDescription().trim().equals("") && eventDetails.getStartDateTime() != null
 					&& eventDetails.getEndDateTime() != null) {
 				flag = true;
 			}

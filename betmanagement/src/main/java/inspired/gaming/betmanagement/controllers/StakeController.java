@@ -23,7 +23,7 @@ public class StakeController {
 	@Autowired
 	StakeService stakeService;
 
-	@PostMapping(path = "/saveorUpdateMarketDetails")
+	@PostMapping(path = "/saveorUpdateStakeDetails")
 	public ResponseEntity<BaseResponse> saveorUpdateMarketDetails(@RequestBody StakeDetails stakeDetails) {
 
 		BaseResponse baseResponse = null;

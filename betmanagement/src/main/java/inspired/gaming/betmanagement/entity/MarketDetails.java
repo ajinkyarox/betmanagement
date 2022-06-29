@@ -19,8 +19,11 @@ public class MarketDetails {
 	@Column(name = "marketdescription")
 	public String marketdescription;
 
-	@Column(name = "statusOfMarket")
-	public String status;
+	@Column(name = "winst")
+	public String winst;
+	
+	@Column(name = "eventId")
+	public Integer eventId;
 
 	public Integer getMarketId() {
 		return marketId;
@@ -46,21 +49,30 @@ public class MarketDetails {
 		this.marketdescription = marketdescription;
 	}
 
+	
+	public Integer getEventId() {
+		return eventId;
+	}
+
+	public void setEventId(Integer eventId) {
+		this.eventId = eventId;
+	}
+
+	public String getWinst() {
+		return winst;
+	}
+
+	public void setWinst(String winst) {
+		this.winst = winst;
+	}
+
 	@Override
 	public String toString() {
 		return "MarketDetails [marketId=" + marketId + ", marketname=" + marketname + ", marketdescription="
-				+ marketdescription + ", status=" + status + ", getMarketId()=" + getMarketId() + ", getMarketname()="
-				+ getMarketname() + ", getMarketdescription()=" + getMarketdescription() + ", getStatus()="
-				+ getStatus() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
+				+ marketdescription + ", winst=" + winst + ", eventId=" + eventId + ", getMarketId()=" + getMarketId()
+				+ ", getMarketname()=" + getMarketname() + ", getMarketdescription()=" + getMarketdescription()
+				+ ", getEventId()=" + getEventId() + ", getWinst()=" + getWinst() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
 }

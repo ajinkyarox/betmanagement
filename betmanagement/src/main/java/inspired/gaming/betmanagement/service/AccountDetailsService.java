@@ -12,4 +12,6 @@ public interface AccountDetailsService {
 	
 	public BaseResponse getAccountDetails(AccountDetails accountDetails);
 	
+	public AccountDetails fetchAccountDetails(Integer uid);
+	
 }

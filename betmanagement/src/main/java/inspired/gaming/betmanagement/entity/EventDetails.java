@@ -21,10 +21,10 @@ public class EventDetails {
 	@Column(name = "eventdescription")
 	public String eventDescription;
 
-	@Column(name = "startDateTime")
+	@Column(name = "starttime")
 	public Date startDateTime;
 
-	@Column(name = "enddatetime")
+	@Column(name = "endtime")
 	public Date endDateTime;
 
 	@Column(name = "totalBetAmount")
