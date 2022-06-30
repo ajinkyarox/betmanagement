@@ -16,6 +16,9 @@ public class MarketServiceImpl implements MarketService {
 
 	@Autowired
 	MarketRepository marketRepository;
+	
+	@Autowired
+	private LoggingService loggingService;
 
 	@Override
 	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails) {
@@ -23,12 +26,20 @@ public class MarketServiceImpl implements MarketService {
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			if (validateMarketDetails(marketDetails)) {
 				marketRepository.save(marketDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}
@@ -39,14 +50,31 @@ public class MarketServiceImpl implements MarketService {
 	@Override
 	public List<MarketDetails> getMarketDetails(Integer marketId) {
 
+		
 		List<MarketDetails> listOfMarketDetails = new ArrayList<MarketDetails>();
-
-		if (marketId == null || marketId == 0) {
-			listOfMarketDetails = marketRepository.findAll();
-		} else {
-			MarketDetails marketDetails = marketRepository.findByMarketId(marketId);
-			listOfMarketDetails.add(marketDetails);
+		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			if (marketId == null || marketId == 0) {
+				listOfMarketDetails = marketRepository.findAll();
+			} else {
+				MarketDetails marketDetails = marketRepository.findByMarketId(marketId);
+				listOfMarketDetails.add(marketDetails);
+			}
+			
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+		} catch(Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		}
+		
 		return listOfMarketDetails;
 	}
 
@@ -56,13 +84,25 @@ public class MarketServiceImpl implements MarketService {
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			MarketDetails marketDetails = marketRepository.findByMarketId(marketId);
 			if (marketDetails != null) {
 				marketRepository.delete(marketDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}

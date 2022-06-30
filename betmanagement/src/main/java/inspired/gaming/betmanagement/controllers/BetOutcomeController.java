@@ -27,9 +27,22 @@ public class BetOutcomeController {
 	public ResponseEntity<BaseResponse> calculateWinnings(@RequestParam("eventId") Integer eventId){
 		BaseResponse baseResponse = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = betOutcomeService .calculateWinnings(eventId);
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch(Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -48,6 +61,11 @@ public class BetOutcomeController {
 		      .getName(), 0);
 			baseResponse = betOutcomeService .getWinnings(eventId);
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch(Exception e) {
 			loggingService.log("ERROR", "Inside Exception"+new Object() {}
 		      .getClass()
@@ -56,10 +74,6 @@ public class BetOutcomeController {
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
-		loggingService.log("INFO", "Outside "+new Object() {}
-	      .getClass()
-	      .getEnclosingMethod()
-	      .getName(), 0);
 		
 		return new ResponseEntity<BaseResponse>(baseResponse,HttpStatus.OK);
 	}

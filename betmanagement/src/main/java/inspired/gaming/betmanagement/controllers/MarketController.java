@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import inspired.gaming.betmanagement.entity.MarketDetails;
 import inspired.gaming.betmanagement.models.BaseResponse;
 import inspired.gaming.betmanagement.other.Constants;
+import inspired.gaming.betmanagement.service.LoggingService;
 import inspired.gaming.betmanagement.service.MarketService;
 
 @RestController
@@ -23,14 +24,30 @@ public class MarketController {
 	@Autowired
 	MarketService marketService;
 
+	@Autowired
+	private LoggingService loggingService;
+	
 	@PostMapping(path = "/saveorUpdateMarketDetails")
 	public ResponseEntity<BaseResponse> saveorUpdateMarketDetails(@RequestBody MarketDetails marketDetails) {
 
 		BaseResponse baseResponse = null;
 
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = marketService.saveorUpdateMarketDetails(marketDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -43,9 +60,22 @@ public class MarketController {
 		BaseResponse baseResponse = new BaseResponse();
 		List<MarketDetails> listOfMarketDetails = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			listOfMarketDetails = marketService.getMarketDetails(marketId);
 			baseResponse.setListOfMDObjects(listOfMarketDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -57,8 +87,21 @@ public class MarketController {
 	public ResponseEntity<BaseResponse> deleteMarketDetails(@RequestParam("marketId") Integer marketId) {
 		BaseResponse baseResponse = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = marketService.deleteMarketDetails(marketId);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}

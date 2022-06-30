@@ -22,60 +22,78 @@ public class LoggingServiceImpl implements LoggingService{
 
 	@Value("${default.user.id}")
 	private Integer defUID;
-	
-	@Autowired
-	AccountDetailsService accountDetailsService;
-	
+
 	@Value("${token.uri}")
 	private String tokenUri;
-	
+
 	@Value("${logging.uri}")
 	private String loggingUri;
-	
+
 	@Value("${logging.error.uri}")
 	private String loggingErrorUri;
-	
+
+	@Autowired
+	AccountDetailsRepository accountDetailsRepository;
+
 	@Override
 	public void log(String messageType, String message, Integer userId) {
-		
+
 		RestTemplate restTemplate = new RestTemplate();
 		LogDetails logDetails = new LogDetails();
 		TokenBody tokenBody = new TokenBody();
 		try {
+
 			logDetails.setMessageType(messageType);
 			logDetails.setMessage(message);
 			AccountDetails accountDetails = new AccountDetails();
-			if(userId!=null && userId!=0) {
-				
-				accountDetails = accountDetailsService.fetchAccountDetails(userId);
-				
-			}
-			else {
-				accountDetails = accountDetailsService.fetchAccountDetails(defUID);
+			if (userId != null && userId != 0) {
+
+				accountDetails = fetchAccountDetails(userId);
+
+			} else {
+				accountDetails = fetchAccountDetails(defUID);
 
 			}
 			tokenBody.setUsername(accountDetails.getUsername());
-			ResponseEntity<TokenResponseBody> tokenResponseEntity = restTemplate.postForEntity(tokenUri,tokenBody ,TokenResponseBody.class);
-			 String token = tokenResponseEntity.getBody().getToken();
-			if(token!=null) {
+			ResponseEntity<TokenResponseBody> tokenResponseEntity = restTemplate.postForEntity(tokenUri, tokenBody,
+					TokenResponseBody.class);
+			String token = tokenResponseEntity.getBody().getToken();
+			if (token != null) {
 				HttpHeaders headers = new HttpHeaders();
 				headers.set("Authorization", token);
 				HttpEntity<LogDetails> logEntity = new HttpEntity<>(logDetails, headers);
-				if(logDetails.getMessageType().equals("INFO")) {
-					ResponseEntity<LogResponse> logResponseEntity = restTemplate.postForEntity(loggingUri, logEntity, LogResponse.class);
+				if (logDetails.getMessageType().equals("INFO")) {
+					ResponseEntity<LogResponse> logResponseEntity = restTemplate.postForEntity(loggingUri, logEntity,
+							LogResponse.class);
 
-				}
-				else {
-					ResponseEntity<LogResponse> logResponseEntity = restTemplate.postForEntity(loggingErrorUri, logEntity, LogResponse.class);
+				} else {
+					ResponseEntity<LogResponse> logResponseEntity = restTemplate.postForEntity(loggingErrorUri,
+							logEntity, LogResponse.class);
 
 				}
 			}
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
+
 			e.printStackTrace();
 		}
-	
-		
+
 	}
-	
+
+	public AccountDetails fetchAccountDetails(Integer uid) {
+		// TODO Auto-generated method stub
+
+		AccountDetails accountDetailsTemp = new AccountDetails();
+		try {
+
+			accountDetailsTemp = accountDetailsRepository.findByUid(uid);
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+		return accountDetailsTemp;
+
+	}
 }

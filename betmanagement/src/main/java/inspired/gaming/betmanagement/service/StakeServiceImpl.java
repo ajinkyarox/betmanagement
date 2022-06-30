@@ -17,18 +17,33 @@ public class StakeServiceImpl implements StakeService {
 	@Autowired
 	StakeRepository stakeRepository;
 
+	@Autowired
+	private LoggingService loggingService;
+	
 	@Override
 	public BaseResponse saveorUpdateStakeDetails(StakeDetails stakeDetails) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			if (validateMarketDetails(stakeDetails)) {
 				stakeRepository.save(stakeDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}
@@ -41,12 +56,29 @@ public class StakeServiceImpl implements StakeService {
 
 		List<StakeDetails> listOfStakeDetails = new ArrayList<StakeDetails>();
 
-		if (stakeId == null || stakeId == 0) {
-			listOfStakeDetails = stakeRepository.findAll();
-		} else {
-			StakeDetails stakeDetails = stakeRepository.findByStakeId(stakeId);
-			listOfStakeDetails.add(stakeDetails);
+		try {
+
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			if (stakeId == null || stakeId == 0) {
+				listOfStakeDetails = stakeRepository.findAll();
+			} else {
+				StakeDetails stakeDetails = stakeRepository.findByStakeId(stakeId);
+				listOfStakeDetails.add(stakeDetails);
+			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+		} catch(Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		}
+		
 		return listOfStakeDetails;
 	}
 
@@ -56,13 +88,26 @@ public class StakeServiceImpl implements StakeService {
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			StakeDetails stakeDetails = stakeRepository.findByStakeId(stakeId);
 			if (stakeDetails != null) {
 				stakeRepository.delete(stakeDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}

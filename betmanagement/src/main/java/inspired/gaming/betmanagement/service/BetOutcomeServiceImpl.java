@@ -26,12 +26,19 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 	
 	@Autowired
 	MarketRepository marketRepository;
+	
+	@Autowired
+	private LoggingService loggingService;
 
 	@Override
 	public BaseResponse calculateWinnings(Integer eventId) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			EventDetails eventDetails = eventRepository.findByEventId(eventId);
 			List<StakeDetails> listOfStakes = stakeRepository.findByEventId(eventId);
 
@@ -62,7 +69,15 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 			}
 			stakeRepository.saveAll(updateSDObj);
 			baseResponse.setMessage("Winnings calculated Successfully.");
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -75,11 +90,23 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		MarketDetails marketDetails = marketRepository.findByEventIdAndWinst(eventId, "WON");	
 		List<StakeDetails> listOfWinnings = stakeRepository.findByEventIdAndMarketId(eventId, marketDetails.getMarketId());
 		baseResponse.setMessage("Winnings Extracted Successfully.");
 		baseResponse.setListOfSDObjects(listOfWinnings);
+		loggingService.log("INFO", "Outside "+new Object() {}
+	      .getClass()
+	      .getEnclosingMethod()
+	      .getName(), 0);
 		} catch(Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}

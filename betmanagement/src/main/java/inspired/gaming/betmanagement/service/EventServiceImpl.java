@@ -18,6 +18,9 @@ public class EventServiceImpl implements EventService {
 
 	@Autowired
 	EventRepository eventRepository;
+	
+	@Autowired
+	private LoggingService loggingService;
 
 	@Override
 	public BaseResponse saveorUpdateEventDetails(EventDetails eventDetails) {
@@ -25,6 +28,10 @@ public class EventServiceImpl implements EventService {
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			if (validateEventDetails(eventDetails)) {
 				eventRepository.save(eventDetails);
 			}
@@ -32,7 +39,15 @@ public class EventServiceImpl implements EventService {
 			else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}
@@ -42,15 +57,32 @@ public class EventServiceImpl implements EventService {
 
 	@Override
 	public List<EventDetails> getEventDetails(Integer eventId) {
-
 		List<EventDetails> listOfEventDetails = new ArrayList<EventDetails>();
 
-		if (eventId == null || eventId == 0) {
-			listOfEventDetails = eventRepository.findAll();
-		} else {
-			EventDetails eventDetails = eventRepository.findByEventId(eventId);
-			listOfEventDetails.add(eventDetails);
+		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+
+			if (eventId == null || eventId == 0) {
+				listOfEventDetails = eventRepository.findAll();
+			} else {
+				EventDetails eventDetails = eventRepository.findByEventId(eventId);
+				listOfEventDetails.add(eventDetails);
+			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+		} catch(Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		}
+		
+		
 		return listOfEventDetails;
 	}
 
@@ -60,13 +92,25 @@ public class EventServiceImpl implements EventService {
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			EventDetails eventDetails = eventRepository.findByEventId(eventId);
 			if (eventDetails != null) {
 				eventRepository.delete(eventDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 
 		}

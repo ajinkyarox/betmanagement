@@ -16,6 +16,7 @@ import inspired.gaming.betmanagement.entity.EventDetails;
 import inspired.gaming.betmanagement.models.BaseResponse;
 import inspired.gaming.betmanagement.other.Constants;
 import inspired.gaming.betmanagement.service.EventService;
+import inspired.gaming.betmanagement.service.LoggingService;
 
 @RestController
 public class EventController {
@@ -23,14 +24,30 @@ public class EventController {
 	@Autowired
 	EventService eventService;
 
+	@Autowired
+	private LoggingService loggingService;
+	
 	@PostMapping(path = "/saveorUpdateEventDetails")
 	public ResponseEntity<BaseResponse> saveorUpdateEventDetails(@RequestBody EventDetails eventDetails) {
 
 		BaseResponse baseResponse = null;
 
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = eventService.saveorUpdateEventDetails(eventDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -43,9 +60,22 @@ public class EventController {
 		BaseResponse baseResponse = new BaseResponse();
 		List<EventDetails> listOfEventDetails = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			listOfEventDetails = eventService.getEventDetails(eventId);
 			baseResponse.setListOfEDObjects(listOfEventDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -57,8 +87,21 @@ public class EventController {
 	public ResponseEntity<BaseResponse> deleteEventDetails(@RequestParam("eventId") Integer eventId) {
 		BaseResponse baseResponse = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = eventService.deleteEventDetails(eventId);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}

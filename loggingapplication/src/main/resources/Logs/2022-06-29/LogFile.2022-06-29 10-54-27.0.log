@@ -1,0 +1,105 @@
+[2022-06-29 10:54:23] - Unregistering application LOGGINGAPPLICATION with eureka with status DOWN
+[2022-06-29 10:54:23] - Saw local status change event StatusChangeEvent [timestamp=1656496463932, current=DOWN, previous=UP]
+[2022-06-29 10:54:23] - Executing on-demand update of local InstanceInfo
+[2022-06-29 10:54:23] - Canceling the latest scheduled update, it will be rescheduled at the end of on demand update
+[2022-06-29 10:54:23] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001: registering service...
+[2022-06-29 10:54:23] - HTTP POST http://localhost:8761/eureka/apps/LOGGINGAPPLICATION
+[2022-06-29 10:54:23] - Stopping beans in phase 2147483647
+[2022-06-29 10:54:23] - Accept=[application/json, application/*+json]
+[2022-06-29 10:54:23] - Writing [InstanceInfo [instanceId = 192.168.0.75:loggingapplication:8001, appName = LOGGINGAPPLICATION, hostName = 192.168.0.75, status = DOWN, ipAddr = 192.168.0.75, port = 8001, securePort = 443, dataCenterInfo = com.netflix.appinfo.MyDataCenterInfo@7421c485] as "application/json"
+[2022-06-29 10:54:23] - CookieSpec selected: default
+[2022-06-29 10:54:23] - Auth cache not set in the context
+[2022-06-29 10:54:23] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:23] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:23] - http-outgoing-1: set socket timeout to 0
+[2022-06-29 10:54:23] - Executing request POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1
+[2022-06-29 10:54:23] - Target auth state: UNCHALLENGED
+[2022-06-29 10:54:23] - Proxy auth state: UNCHALLENGED
+[2022-06-29 10:54:23] - http-outgoing-1 >> POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1
+[2022-06-29 10:54:23] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-29 10:54:23] - http-outgoing-1 >> Accept-Encoding: gzip
+[2022-06-29 10:54:23] - http-outgoing-1 >> Content-Type: application/json
+[2022-06-29 10:54:23] - http-outgoing-1 >> Content-Length: 1010
+[2022-06-29 10:54:23] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-29 10:54:23] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-29 10:54:23] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-29 10:54:23] - http-outgoing-1 >> "POST /eureka/apps/LOGGINGAPPLICATION HTTP/1.1[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Accept-Encoding: gzip[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Content-Type: application/json[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Content-Length: 1010[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-29 10:54:23] - Bean 'webServerGracefulShutdown' completed its stop procedure
+[2022-06-29 10:54:23] - http-outgoing-1 >> "{"instance":{"instanceId":"192.168.0.75:loggingapplication:8001","app":"LOGGINGAPPLICATION","appGroupName":null,"ipAddr":"192.168.0.75","sid":"na","homePageUrl":"http://192.168.0.75:8001/","statusPageUrl":"http://192.168.0.75:8001/actuator/info","healthCheckUrl":"http://192.168.0.75:8001/actuator/health","secureHealthCheckUrl":null,"vipAddress":"loggingapplication","secureVipAddress":"loggingapplication","countryId":1,"dataCenterInfo":{"@class":"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo","name":"MyOwn"},"hostName":"192.168.0.75","status":"DOWN","overriddenStatus":"UNKNOWN","leaseInfo":{"renewalIntervalInSecs":30,"durationInSecs":90,"registrationTimestamp":0,"lastRenewalTimestamp":0,"evictionTimestamp":0,"serviceUpTimestamp":0},"isCoordinatingDiscoveryServer":false,"lastUpdatedTimestamp":1656496462088,"lastDirtyTimestamp":1656496463932,"actionType":null,"asgName":null,"port":{"$":8001,"@enabled":"true"},"securePort":{"$":443,"@enabled":"false"},"metadata":{"management.port":"8001"}}}"
+[2022-06-29 10:54:23] - Stopping beans in phase 2147483646
+[2022-06-29 10:54:23] - http-outgoing-1 << "HTTP/1.1 204 [\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << "Date: Wed, 29 Jun 2022 09:54:22 GMT[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << "[\r][\n]"
+[2022-06-29 10:54:23] - http-outgoing-1 << HTTP/1.1 204 
+[2022-06-29 10:54:23] - http-outgoing-1 << Content-Type: application/json
+[2022-06-29 10:54:23] - http-outgoing-1 << Date: Wed, 29 Jun 2022 09:54:22 GMT
+[2022-06-29 10:54:23] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-29 10:54:23] - http-outgoing-1 << Connection: keep-alive
+[2022-06-29 10:54:23] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-29 10:54:23] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-29 10:54:23] - http-outgoing-1: set socket timeout to 0
+[2022-06-29 10:54:23] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:23] - Response 204 NO_CONTENT
+[2022-06-29 10:54:23] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - registration status: 204
+[2022-06-29 10:54:23] - Bean 'webServerStartStop' completed its stop procedure
+[2022-06-29 10:54:23] - Stopping beans in phase 0
+[2022-06-29 10:54:23] - Shutting down ExecutorService 'applicationTaskExecutor'
+[2022-06-29 10:54:23] - Shutting down DiscoveryClient ...
+[2022-06-29 10:54:26] - Unregistering ...
+[2022-06-29 10:54:26] - HTTP DELETE http://localhost:8761/eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001
+[2022-06-29 10:54:26] - Accept=[application/json, application/*+json]
+[2022-06-29 10:54:26] - CookieSpec selected: default
+[2022-06-29 10:54:26] - Auth cache not set in the context
+[2022-06-29 10:54:26] - Connection request: [route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:26] - http-outgoing-1 << "[read] I/O error: Read timed out"
+[2022-06-29 10:54:26] - Connection leased: [id: 1][route: {}->http://localhost:8761][total available: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:26] - http-outgoing-1: set socket timeout to 0
+[2022-06-29 10:54:26] - Executing request DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1
+[2022-06-29 10:54:26] - Target auth state: UNCHALLENGED
+[2022-06-29 10:54:26] - Proxy auth state: UNCHALLENGED
+[2022-06-29 10:54:26] - http-outgoing-1 >> DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1
+[2022-06-29 10:54:26] - http-outgoing-1 >> Accept: application/json, application/*+json
+[2022-06-29 10:54:26] - http-outgoing-1 >> Content-Length: 0
+[2022-06-29 10:54:26] - http-outgoing-1 >> Host: localhost:8761
+[2022-06-29 10:54:26] - http-outgoing-1 >> Connection: Keep-Alive
+[2022-06-29 10:54:26] - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)
+[2022-06-29 10:54:26] - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+[2022-06-29 10:54:26] - http-outgoing-1 >> "DELETE /eureka/apps/LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 HTTP/1.1[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "Accept: application/json, application/*+json[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "Content-Length: 0[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "Host: localhost:8761[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.5.13 (Java/18.0.1)[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 >> "[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "HTTP/1.1 200 [\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "Content-Type: application/json[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "Content-Length: 0[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "Date: Wed, 29 Jun 2022 09:54:26 GMT[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "Keep-Alive: timeout=60[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "Connection: keep-alive[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << "[\r][\n]"
+[2022-06-29 10:54:26] - http-outgoing-1 << HTTP/1.1 200 
+[2022-06-29 10:54:26] - http-outgoing-1 << Content-Type: application/json
+[2022-06-29 10:54:26] - http-outgoing-1 << Content-Length: 0
+[2022-06-29 10:54:26] - http-outgoing-1 << Date: Wed, 29 Jun 2022 09:54:26 GMT
+[2022-06-29 10:54:26] - http-outgoing-1 << Keep-Alive: timeout=60
+[2022-06-29 10:54:26] - http-outgoing-1 << Connection: keep-alive
+[2022-06-29 10:54:26] - Connection can be kept alive for 60000 MILLISECONDS
+[2022-06-29 10:54:26] - Connection [id: 1][route: {}->http://localhost:8761] can be kept alive for 60.0 seconds
+[2022-06-29 10:54:26] - http-outgoing-1: set socket timeout to 0
+[2022-06-29 10:54:26] - Connection released: [id: 1][route: {}->http://localhost:8761][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+[2022-06-29 10:54:26] - Response 200 OK
+[2022-06-29 10:54:26] - DiscoveryClient_LOGGINGAPPLICATION/192.168.0.75:loggingapplication:8001 - deregister  status: 200
+[2022-06-29 10:54:27] - Completed shut down of DiscoveryClient

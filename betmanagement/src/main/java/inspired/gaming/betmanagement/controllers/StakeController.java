@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import inspired.gaming.betmanagement.entity.StakeDetails;
 import inspired.gaming.betmanagement.models.BaseResponse;
 import inspired.gaming.betmanagement.other.Constants;
+import inspired.gaming.betmanagement.service.LoggingService;
 import inspired.gaming.betmanagement.service.StakeService;
 
 @RestController
@@ -23,14 +24,30 @@ public class StakeController {
 	@Autowired
 	StakeService stakeService;
 
+	@Autowired
+	private LoggingService loggingService;
+	
 	@PostMapping(path = "/saveorUpdateStakeDetails")
 	public ResponseEntity<BaseResponse> saveorUpdateMarketDetails(@RequestBody StakeDetails stakeDetails) {
 
 		BaseResponse baseResponse = null;
 
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = stakeService.saveorUpdateStakeDetails(stakeDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -43,9 +60,22 @@ public class StakeController {
 		BaseResponse baseResponse = new BaseResponse();
 		List<StakeDetails> listOfStakeDetails = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			listOfStakeDetails = stakeService.getStakeDetails(stakeId);
 			baseResponse.setListOfSDObjects(listOfStakeDetails);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -57,8 +87,21 @@ public class StakeController {
 	public ResponseEntity<BaseResponse> deleteStakeDetails(@RequestParam("stakeId") Integer stakeId) {
 		BaseResponse baseResponse = null;
 		try {
+			loggingService.log("INFO", "Inside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse = stakeService.deleteStakeDetails(stakeId);
+			loggingService.log("INFO", "Outside "+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
+			
 		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception"+new Object() {}
+		      .getClass()
+		      .getEnclosingMethod()
+		      .getName(), 0);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
