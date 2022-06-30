@@ -13,19 +13,17 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 
 	@Autowired
 	AccountDetailsRepository accountDetailsRepository;
-	
+
 	@Autowired
-	private LoggingService loggingService;
+	private Logging loggingService;
 
 	@Override
-	public BaseResponse saveAccountDetails(AccountDetails accountDetails) {
+	public BaseResponse saveAccountDetails(AccountDetails accountDetails, String token) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			AccountDetails accountDetailsTemp = accountDetailsRepository.findByUsername(accountDetails.getUsername());
 			if (accountDetailsTemp == null) {
 				accountDetailsRepository.save(accountDetails);
@@ -34,15 +32,11 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 				baseResponse.setMessage("Username already exists");
 			}
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -51,15 +45,13 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 	}
 
 	@Override
-	public BaseResponse getAccountDetails(AccountDetails accountDetails) {
+	public BaseResponse getAccountDetails(AccountDetails accountDetails, String token) {
 		// TODO Auto-generated method stub
 
 		BaseResponse baseResponse = new BaseResponse();
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			AccountDetails accountDetailsTemp = accountDetailsRepository
 					.findByUsernameAndPassword(accountDetails.getUsername(), accountDetails.getPassword());
 			if (accountDetailsTemp == null) {
@@ -68,15 +60,11 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 				baseResponse.setMessage("Account verification successful");
 			}
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -86,27 +74,20 @@ public class AccountDetailsServiceImpl implements AccountDetailsService {
 	}
 
 	@Override
-	public AccountDetails fetchAccountDetails(Integer uid) {
+	public AccountDetails fetchAccountDetails(Integer uid, String token) {
 		// TODO Auto-generated method stub
 
-		AccountDetails accountDetailsTemp  = new AccountDetails();
+		AccountDetails accountDetailsTemp = new AccountDetails();
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-			 accountDetailsTemp = accountDetailsRepository
-					.findByUid(uid);
-			 loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-		
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+			accountDetailsTemp = accountDetailsRepository.findByUid(uid);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			e.printStackTrace();
 		}
 

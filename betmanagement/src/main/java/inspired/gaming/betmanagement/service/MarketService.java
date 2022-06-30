@@ -10,9 +10,9 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 @Service
 public interface MarketService {
 
-	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails);
-	public List<MarketDetails> getMarketDetails(Integer marketId);
-	public BaseResponse deleteMarketDetails(Integer marketId);
+	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails, String token);
+	public List<MarketDetails> getMarketDetails(Integer marketId, String token);
+	public BaseResponse deleteMarketDetails(Integer marketId, String token);
 	
 	
 }

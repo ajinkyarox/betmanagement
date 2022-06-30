@@ -10,9 +10,9 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 @Service
 public interface StakeService {
 
-	public BaseResponse saveorUpdateStakeDetails(StakeDetails stakeDetails);
-	public List<StakeDetails> getStakeDetails(Integer stakeId);
-	public BaseResponse deleteStakeDetails(Integer stakeId);
+	public BaseResponse saveorUpdateStakeDetails(StakeDetails stakeDetails, String token);
+	public List<StakeDetails> getStakeDetails(Integer stakeId, String token);
+	public BaseResponse deleteStakeDetails(Integer stakeId, String token);
 	
 	
 }

@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import inspired.gaming.betmanagement.entity.MarketDetails;
 import inspired.gaming.betmanagement.models.BaseResponse;
 import inspired.gaming.betmanagement.other.Constants;
+import inspired.gaming.betmanagement.service.Logging;
 import inspired.gaming.betmanagement.service.LoggingService;
 import inspired.gaming.betmanagement.service.MarketService;
 
@@ -25,29 +27,24 @@ public class MarketController {
 	MarketService marketService;
 
 	@Autowired
-	private LoggingService loggingService;
+	private Logging loggingService;
 	
 	@PostMapping(path = "/saveorUpdateMarketDetails")
-	public ResponseEntity<BaseResponse> saveorUpdateMarketDetails(@RequestBody MarketDetails marketDetails) {
+	public ResponseEntity<BaseResponse> saveorUpdateMarketDetails(@RequestBody MarketDetails marketDetails,
+			@RequestHeader("Authorization") String token) {
 
 		BaseResponse baseResponse = null;
 
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-			baseResponse = marketService.saveorUpdateMarketDetails(marketDetails);
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+			baseResponse = marketService.saveorUpdateMarketDetails(marketDetails,token);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -56,26 +53,21 @@ public class MarketController {
 	}
 
 	@GetMapping(path = "/getMarketDetails")
-	public ResponseEntity<BaseResponse> getMarketDetails(@RequestParam("marketId") Integer marketId) {
+	public ResponseEntity<BaseResponse> getMarketDetails(@RequestParam("marketId") Integer marketId,
+			@RequestHeader("Authorization") String token) {
 		BaseResponse baseResponse = new BaseResponse();
 		List<MarketDetails> listOfMarketDetails = null;
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-			listOfMarketDetails = marketService.getMarketDetails(marketId);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+			listOfMarketDetails = marketService.getMarketDetails(marketId,token);
 			baseResponse.setListOfMDObjects(listOfMarketDetails);
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -84,24 +76,19 @@ public class MarketController {
 	}
 
 	@DeleteMapping("/deleteMarketDetails")
-	public ResponseEntity<BaseResponse> deleteMarketDetails(@RequestParam("marketId") Integer marketId) {
+	public ResponseEntity<BaseResponse> deleteMarketDetails(@RequestParam("marketId") Integer marketId,
+			@RequestHeader("Authorization") String token) {
 		BaseResponse baseResponse = null;
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-			baseResponse = marketService.deleteMarketDetails(marketId);
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+			baseResponse = marketService.deleteMarketDetails(marketId,token);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}

@@ -8,10 +8,10 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 @Service
 public interface AccountDetailsService {
 
-	public BaseResponse saveAccountDetails(AccountDetails accountDetails);
+	public BaseResponse saveAccountDetails(AccountDetails accountDetails, String token);
 	
-	public BaseResponse getAccountDetails(AccountDetails accountDetails);
+	public BaseResponse getAccountDetails(AccountDetails accountDetails, String token);
 	
-	public AccountDetails fetchAccountDetails(Integer uid);
+	public AccountDetails fetchAccountDetails(Integer uid, String token);
 	
 }

@@ -7,9 +7,9 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 @Service
 public interface BetOutcomeService {
 
-	public BaseResponse calculateWinnings(Integer eventId);
+	public BaseResponse calculateWinnings(Integer eventId, String token);
 	
-	public BaseResponse getWinnings(Integer eventId);
+	public BaseResponse getWinnings(Integer eventId, String token);
 	
 	
 }

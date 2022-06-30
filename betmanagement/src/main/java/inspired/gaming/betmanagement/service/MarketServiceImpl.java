@@ -16,30 +16,26 @@ public class MarketServiceImpl implements MarketService {
 
 	@Autowired
 	MarketRepository marketRepository;
-	
+
 	@Autowired
-	private LoggingService loggingService;
+	private Logging loggingService;
 
 	@Override
-	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails) {
+	public BaseResponse saveorUpdateMarketDetails(MarketDetails marketDetails, String token) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			if (validateMarketDetails(marketDetails)) {
 				marketRepository.save(marketDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 
 		}
@@ -48,61 +44,48 @@ public class MarketServiceImpl implements MarketService {
 	}
 
 	@Override
-	public List<MarketDetails> getMarketDetails(Integer marketId) {
+	public List<MarketDetails> getMarketDetails(Integer marketId, String token) {
 
-		
 		List<MarketDetails> listOfMarketDetails = new ArrayList<MarketDetails>();
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			if (marketId == null || marketId == 0) {
 				listOfMarketDetails = marketRepository.findAll();
 			} else {
 				MarketDetails marketDetails = marketRepository.findByMarketId(marketId);
 				listOfMarketDetails.add(marketDetails);
 			}
-			
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
-		} catch(Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
+		} catch (Exception e) {
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 		}
-		
+
 		return listOfMarketDetails;
 	}
 
 	@Override
-	public BaseResponse deleteMarketDetails(Integer marketId) {
+	public BaseResponse deleteMarketDetails(Integer marketId, String token) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		try {
-			loggingService.log("INFO", "Inside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Inside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			MarketDetails marketDetails = marketRepository.findByMarketId(marketId);
 			if (marketDetails != null) {
 				marketRepository.delete(marketDetails);
 			} else {
 				baseResponse.setMessage("Please provide all the details for the Event.");
 			}
-			loggingService.log("INFO", "Outside "+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("INFO", "Outside " + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 		} catch (Exception e) {
-			loggingService.log("ERROR", "Inside Exception"+new Object() {}
-		      .getClass()
-		      .getEnclosingMethod()
-		      .getName(), 0);
+			loggingService.log("ERROR", "Inside Exception" + new Object() {
+			}.getClass().getEnclosingMethod().getName(), token);
 			baseResponse.setMessage(e.getMessage());
 
 		}

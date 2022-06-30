@@ -17,8 +17,8 @@ import inspired.gaming.betmanagement.other.LogDetails;
 import inspired.gaming.betmanagement.other.LogResponse;
 import inspired.gaming.betmanagement.repository.AccountDetailsRepository;
 
-@Service
-public class LoggingServiceImpl implements LoggingService{
+@Component
+public class Logging{
 
 	@Value("${default.user.id}")
 	private Integer defUID;
@@ -35,29 +35,16 @@ public class LoggingServiceImpl implements LoggingService{
 	@Autowired
 	AccountDetailsRepository accountDetailsRepository;
 
-	@Override
-	public void log(String messageType, String message, Integer userId) {
+	
+	public void log(String messageType, String message, String token) {
 
 		RestTemplate restTemplate = new RestTemplate();
 		LogDetails logDetails = new LogDetails();
-		TokenBody tokenBody = new TokenBody();
 		try {
 
 			logDetails.setMessageType(messageType);
 			logDetails.setMessage(message);
-			AccountDetails accountDetails = new AccountDetails();
-			if (userId != null && userId != 0) {
-
-				accountDetails = fetchAccountDetails(userId);
-
-			} else {
-				accountDetails = fetchAccountDetails(defUID);
-
-			}
-			tokenBody.setUsername(accountDetails.getUsername());
-			ResponseEntity<TokenResponseBody> tokenResponseEntity = restTemplate.postForEntity(tokenUri, tokenBody,
-					TokenResponseBody.class);
-			String token = tokenResponseEntity.getBody().getToken();
+			
 			if (token != null) {
 				HttpHeaders headers = new HttpHeaders();
 				headers.set("Authorization", token);

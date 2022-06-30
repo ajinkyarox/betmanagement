@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface LoggingService {
 
-	public void log(String messageType, String message, Integer userId);
+	public void log(String messageType, String message, String token);
 	
 }

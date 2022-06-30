@@ -28,17 +28,17 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 	MarketRepository marketRepository;
 	
 	@Autowired
-	private LoggingService loggingService;
+	private Logging loggingService;
 
 	@Override
-	public BaseResponse calculateWinnings(Integer eventId) {
+	public BaseResponse calculateWinnings(Integer eventId, String token) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
 			loggingService.log("INFO", "Inside "+new Object() {}
 		      .getClass()
 		      .getEnclosingMethod()
-		      .getName(), 0);
+		      .getName(), token);
 			EventDetails eventDetails = eventRepository.findByEventId(eventId);
 			List<StakeDetails> listOfStakes = stakeRepository.findByEventId(eventId);
 
@@ -72,12 +72,12 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 			loggingService.log("INFO", "Outside "+new Object() {}
 		      .getClass()
 		      .getEnclosingMethod()
-		      .getName(), 0);
+		      .getName(), token);
 		} catch (Exception e) {
 			loggingService.log("ERROR", "Inside Exception"+new Object() {}
 		      .getClass()
 		      .getEnclosingMethod()
-		      .getName(), 0);
+		      .getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}
@@ -86,14 +86,14 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 	}
 
 	@Override
-	public BaseResponse getWinnings(Integer eventId) {
+	public BaseResponse getWinnings(Integer eventId, String token) {
 		// TODO Auto-generated method stub
 		BaseResponse baseResponse = new BaseResponse();
 		try {
 			loggingService.log("INFO", "Inside "+new Object() {}
 		      .getClass()
 		      .getEnclosingMethod()
-		      .getName(), 0);
+		      .getName(),token);
 		MarketDetails marketDetails = marketRepository.findByEventIdAndWinst(eventId, "WON");	
 		List<StakeDetails> listOfWinnings = stakeRepository.findByEventIdAndMarketId(eventId, marketDetails.getMarketId());
 		baseResponse.setMessage("Winnings Extracted Successfully.");
@@ -101,12 +101,12 @@ public class BetOutcomeServiceImpl implements BetOutcomeService {
 		loggingService.log("INFO", "Outside "+new Object() {}
 	      .getClass()
 	      .getEnclosingMethod()
-	      .getName(), 0);
+	      .getName(), token);
 		} catch(Exception e) {
 			loggingService.log("ERROR", "Inside Exception"+new Object() {}
 		      .getClass()
 		      .getEnclosingMethod()
-		      .getName(), 0);
+		      .getName(), token);
 			baseResponse.setMessage(e.getMessage());
 			baseResponse.setStatus(Constants.SUCCESSSTATUS);
 		}

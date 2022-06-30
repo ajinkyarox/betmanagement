@@ -9,10 +9,10 @@ import inspired.gaming.betmanagement.models.BaseResponse;
 
 @Service
 public interface EventService {
-	public BaseResponse saveorUpdateEventDetails(EventDetails eventDetails);
+	public BaseResponse saveorUpdateEventDetails(EventDetails eventDetails, String token);
 
-	public BaseResponse deleteEventDetails(Integer eventId);
+	public BaseResponse deleteEventDetails(Integer eventId, String token);
 
-	public List<EventDetails> getEventDetails(Integer eventId);
+	public List<EventDetails> getEventDetails(Integer eventId, String token);
 
 }
