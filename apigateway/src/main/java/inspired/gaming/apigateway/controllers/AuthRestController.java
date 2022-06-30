@@ -13,7 +13,6 @@ import inspired.gaming.apigateway.models.TokenResponseBody;
 import inspired.gaming.apigateway.util.JwtUtil;
 import netscape.javascript.JSObject;
 
-
 @RestController
 public class AuthRestController {
 
@@ -24,25 +23,23 @@ public class AuthRestController {
 	public ResponseEntity<TokenResponseBody> login(@RequestBody TokenBody tokenObj) {
 		TokenResponseBody tokenRespBody = new TokenResponseBody();
 		try {
-			if(tokenObj.getUsername()!=null && !tokenObj.getUsername().trim().equals("")) {
+			if (tokenObj.getUsername() != null && !tokenObj.getUsername().trim().equals("")) {
 				String token = jwtUtil.generateToken(tokenObj.getUsername());
 
-				if(token!=null) {
+				if (token != null) {
 					tokenRespBody.setToken(token);
 				} else {
 					tokenRespBody.setResponse("Please provide a valid username");
 				}
-				
-			}
-			else {
+
+			} else {
 				tokenRespBody.setResponse("Please provide username");
 			}
-		
-		} catch(Exception e) {
-			tokenRespBody.setResponse("Error - "+e.getMessage());
+
+		} catch (Exception e) {
+			tokenRespBody.setResponse("Error - " + e.getMessage());
 		}
-		
-		
+
 		return new ResponseEntity<TokenResponseBody>(tokenRespBody, HttpStatus.OK);
 	}
 
@@ -50,10 +47,10 @@ public class AuthRestController {
 	public ResponseEntity<TokenResponseBody> validate(@RequestBody TokenResponseBody tokenObj) {
 		TokenResponseBody tokenRespBody = new TokenResponseBody();
 		try {
-			if(tokenObj.getToken()!=null && !tokenObj.getToken().equals("")) {
+			if (tokenObj.getToken() != null && !tokenObj.getToken().equals("")) {
 				boolean tokenStatus = jwtUtil.validateToken(tokenObj.getToken());
-				
-				if(tokenStatus) {
+
+				if (tokenStatus) {
 					tokenRespBody.setResponse("Token Genuine");
 				} else {
 					tokenRespBody.setResponse("Token Not Genuine");
@@ -62,23 +59,12 @@ public class AuthRestController {
 			} else {
 				tokenRespBody.setResponse("Please provide token");
 			}
-			
-		} catch(Exception e) {
-			tokenRespBody.setResponse("Error - "+e.getMessage());
+
+		} catch (Exception e) {
+			tokenRespBody.setResponse("Error - " + e.getMessage());
 		}
-		
-		
-		
+
 		return new ResponseEntity<TokenResponseBody>(tokenRespBody, HttpStatus.OK);
-	}
-
-	
-	@PostMapping("/auth/register")
-	public ResponseEntity<String> register(@RequestBody String userName) {
-		// Persist user to some persistent storage
-		System.out.println("Info saved...");
-
-		return new ResponseEntity<String>("Registered", HttpStatus.OK);
 	}
 
 }
