@@ -53,7 +53,8 @@ public class JwtAuthenticationFilter implements GatewayFilter {
 
 			try {
 				boolean flag = jwtUtil.validateToken(token);
-				if(!flag && !exchange.getRequest().getURI().toString().contains("saveAccountDetails") ) {
+				if(!flag && !exchange.getRequest().getURI().toString().contains("saveAccountDetails") &&
+						!exchange.getRequest().getURI().toString().contains("swagger-ui")) {
 					ServerHttpResponse response = exchange.getResponse();
 					response.setStatusCode(HttpStatus.UNAUTHORIZED);
 
